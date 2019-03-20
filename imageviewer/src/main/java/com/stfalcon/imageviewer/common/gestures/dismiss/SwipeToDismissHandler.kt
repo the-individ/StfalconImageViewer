@@ -20,6 +20,7 @@ import android.annotation.SuppressLint
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateInterpolator
+import com.stfalcon.imageviewer.R
 import com.stfalcon.imageviewer.common.extensions.hitRect
 import com.stfalcon.imageviewer.common.extensions.setAnimatorListener
 
@@ -34,7 +35,7 @@ internal class SwipeToDismissHandler(
         private const val ANIMATION_DURATION = 200L
     }
 
-    private var translationLimit: Int = swipeView.height / 4
+    private var translationLimit: Int = swipeView.resources.getDimensionPixelOffset(R.dimen.swipe_translation_offset)
     private var isTracking = false
     private var startY: Float = 0f
 
